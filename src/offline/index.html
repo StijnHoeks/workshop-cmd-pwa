@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include './app-meta.html' %}
+
+    <link href="/manifest.json" rel="manifest">
+
+    <link href="/dist/css/fonts.css" rel="stylesheet">
+    <link href="/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/css/src/docs.css" rel="stylesheet">
+
+    {% block head_extra %}{% endblock %}
+</head>
+
+<body {% block body_attributes %}{% endblock %}>
+
+    <h1>TRALALALALA OFFLINE</h1>
+
+    {% block body %}{% endblock %}
+
+    <script src="/assets/js/vendor/jquery.min.js"></script>
+    <script src="/dist/js/bootstrap.js"></script>
+    <script src="/assets/js/docs.min.js"></script>
+    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+    {% block scripts_extra %}{% endblock %}
+
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js');
+    }
+    </script>
+</body>
+</html>
