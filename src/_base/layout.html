@@ -16,6 +16,11 @@
 
     {% block body %}{% endblock %}
 
+    <script src="/sw.js">
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/sw.js')
+        }
+    </script>
     <script src="/assets/js/vendor/jquery.min.js"></script>
     <script src="/dist/js/bootstrap.js"></script>
     <script src="/assets/js/docs.min.js"></script>
