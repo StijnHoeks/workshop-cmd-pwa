@@ -4,6 +4,11 @@ self.addEventListener('install', event => event.waitUntil(
         .then(self.skipWaiting())
 ));
 
+cache.match(request, {''}).then(function(response) {
+  // Do something with the response
+});
+
+
 /* check in DevTools > Application > Cache Storage
  * or check in console using:
 caches.open('bs-v1-core')
